@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/allow_color"
+    android:padding="20dp"
+
+    tools:context=".AllowAccessActivity">
+    
+    <ImageView
+        android:id="@+id/allowIcon"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:src="@drawable/allowaccess"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/allowIcon"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:layout_marginTop="37dp"
+        android:text="@string/text1"
+        android:textColor="@color/white"
+        android:fontFamily="sans-serif-medium"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/text2"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/allow_access_btn"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:text="Allow Access"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:textAllCaps="false"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/white"
+        />
+
+
+</RelativeLayout>

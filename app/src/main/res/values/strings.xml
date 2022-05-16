@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Spartan Video Player</string>
+    <string name="text1">Thank you for installing the Spartan Video Player app</string>
+    <string name="text2">To play videos on this app, you have to allow access to the videos on this device. \n Allow access and we will be ready to go!</string>
+</resources>
