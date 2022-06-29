@@ -9,7 +9,9 @@ dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
+        jcenter() // Warning: this repository is going to shut down soon
         mavenCentral()
+        maven { url 'https://www.jitpack.io' } // this is the line to be added
     }
 }
 rootProject.name = "Spartan Video Player"

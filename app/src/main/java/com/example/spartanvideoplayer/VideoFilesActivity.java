@@ -22,7 +22,7 @@ import java.util.ArrayList;
 
 public class VideoFilesActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
 
-    private static final String MY_PREF = "my pref";
+    public static final String MY_PREF = "my pref";
     RecyclerView recyclerView;
     private ArrayList<MediaFiles> videoFilesArrayList = new ArrayList<>();
     static VideoFilesAdapter videoFilesAdapter;
@@ -37,6 +37,11 @@ public class VideoFilesActivity extends AppCompatActivity implements SearchView.
         getSupportActionBar().setTitle(folder_name);
         recyclerView = findViewById(R.id.videos_rv);
         swipeRefreshLayout = findViewById(R.id.swipe_refresh_videos);
+
+        SharedPreferences.Editor editor = getSharedPreferences(MY_PREF, MODE_PRIVATE).edit();
+        editor.putString("playlistFolderMame", folder_name);
+        editor.apply();
+
         showVideoFiles();
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -49,7 +54,7 @@ public class VideoFilesActivity extends AppCompatActivity implements SearchView.
 
     private void showVideoFiles() {
         videoFilesArrayList = fetchMedia(folder_name);
-        videoFilesAdapter = new VideoFilesAdapter(videoFilesArrayList, this);
+        videoFilesAdapter = new VideoFilesAdapter(videoFilesArrayList, this, 0);
         recyclerView.setAdapter(videoFilesAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this,
                 RecyclerView.VERTICAL, false));
